@@ -2,6 +2,7 @@
 nextflow.enable.dsl=2
 
 include { DATA_PREPARATION } from './data_preparation.nf'
+include { NEXTCLADE_RUN } from './nextclade_run.nf'
 
 process TestConfig {
     tag 'Test Config'
@@ -27,7 +28,7 @@ workflow {
     // Sample Sheet Check
     ch_input = DATA_PREPARATION(Channel.fromPath(params.input_dir, checkIfExists: true))
 
-    //DATA_PREPARATION(params.input_dir)
+    NEXTCLADE_RUN(DATA_PREPARATION.out.fasta_files, Channel.fromPath(params.nextclade_datasets))
 
     // Test configuration
     TestConfig()

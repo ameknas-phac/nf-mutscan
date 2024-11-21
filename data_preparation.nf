@@ -9,10 +9,10 @@ process DATA_PREPARATION {
     }
 
     input:
-    path(input_dir)
+    path input_dir
 
     output:
-    path 'Mutation_Scan'
+    path ('Mutation_Scan'), emit: fasta_files
 
     publishDir "${params.output_dir}", mode: 'copy'
 
