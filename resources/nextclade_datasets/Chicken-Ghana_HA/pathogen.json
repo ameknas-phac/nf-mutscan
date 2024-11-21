@@ -1,0 +1,56 @@
+{
+  "schemaVersion": "3.0.0",
+  "alignmentParams": {
+    "excessBandwidth": 9,
+    "terminalBandwidth": 100,
+    "allowedMismatches": 4,
+    "gapAlignmentSide": "right",
+    "minSeedCover": 0.1
+  },
+  "compatibility": {
+    "cli": "3.0.0-alpha.0",
+    "web": "3.0.0-alpha.0"
+  },
+  "files": {
+    "changelog": "CHANGELOG.md",
+    "genomeAnnotation": "genome_annotation.gff3",
+    "pathogenJson": "pathogen.json",
+    "readme": "README.md",
+    "reference": "reference.fasta"
+  },
+  "qc": {
+    "missingData": {
+      "enabled": false,
+      "missingDataThreshold": 100,
+      "scoreBias": 0
+    },
+    "snpClusters": {
+      "enabled": false,
+      "windowSize": 100,
+      "clusterCutOff": 5,
+      "scoreWeight": 50
+    },
+    "mixedSites": {
+      "enabled": true,
+      "mixedSitesThreshold": 10
+    },
+    "frameShifts": {
+      "enabled": true
+    },
+    "stopCodons": {
+      "enabled": true,
+      "ignoredStopCodons": []
+    }
+  },
+  "attributes": {
+    "name": "EPI2415855|A/chicken/Ghana/AVL-763_21VIR7050-39/2021|EPI_ISL_16997921|H5N1 HA (segment 4)",
+    "segment": "HA",
+    "reference accession": "EPI_ISL_16997921",
+    "reference name": ""
+  },
+  "defaultCds": "HA",
+  "version": {
+    "updatedAt": "Chicken-Ghana_HA",
+    "tag": "Chicken-Ghana_HA"
+  }
+}

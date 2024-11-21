@@ -1,0 +1,4 @@
+##gff-version 3
+##sequence-region EPI2709137|A/American_Wigeon/South_Carolina/USDA-000345-001/2021|EPI_ISL_18133029|H5N1 1 1704
+EPI2709137|A/American_Wigeon/South_Carolina/USDA-000345-001/2021|EPI_ISL_18133029|H5N1	feature	region	1	1704	.	+	.	ID=EPI2709137|A/American_Wigeon/South_Carolina/USDA-000345-001/2021|EPI_ISL_18133029|H5N1:1..1748
+EPI2709137|A/American_Wigeon/South_Carolina/USDA-000345-001/2021|EPI_ISL_18133029|H5N1	feature	gene	49	1704	.	+	0	Name=HA;gene=HA;gbkey=CDS

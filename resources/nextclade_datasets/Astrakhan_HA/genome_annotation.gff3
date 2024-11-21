@@ -1,0 +1,4 @@
+##gff-version 3
+##sequence-region EPI2084527|A/Astrakhan/3212/2020|H5N8|HA 1 1695
+EPI2084527|A/Astrakhan/3212/2020|H5N8|HA	feature	region	1	1695	.	+	.	ID=EPI2084527|A/Astrakhan/3212/2020|H5N8|HA:1..1695
+EPI2084527|A/Astrakhan/3212/2020|H5N8|HA	feature	gene	49	1695	.	+	0	Name=HA;gene=HA;gbkey=CDS

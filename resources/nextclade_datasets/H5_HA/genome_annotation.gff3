@@ -1,0 +1,4 @@
+##gff-version 3
+##sequence-region NC_007362|A/Goose/Guangdong/1/1996 1 1760
+NC_007362|A/Goose/Guangdong/1/1996	feature	region	1	1760	.	+	.	ID=NC_007362|A/Goose/Guangdong/1/1996:1..1760
+NC_007362|A/Goose/Guangdong/1/1996	feature	gene	70	1728	.	+	0	Name=HA;gene=HA;gbkey=CDS
