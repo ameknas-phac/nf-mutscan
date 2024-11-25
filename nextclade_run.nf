@@ -11,12 +11,12 @@ process NEXTCLADE_RUN {
     input:
     path fasta_files
     path ch_nextclade_datasets
-    
+
     output:
     path ('nextclade_outputs'), emit: nextclade_outputs
 
     publishDir "${params.output_dir}", mode: 'copy'
-
+    //*TODO: MAKE THIS A PYTHON SCRIPT
     script:
     """
     mkdir -p nextclade_outputs
