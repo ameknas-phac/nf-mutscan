@@ -4,6 +4,7 @@ nextflow.enable.dsl=2
 include { DATA_PREPARATION } from './data_preparation.nf'
 include { NEXTCLADE_RUN } from './nextclade_run.nf'
 include { CLEAN_TSV_FILES } from './clean_tsv_files.nf'
+include {MUTATION_ANALYSIS} from './mutation_analysis.nf'
 
 process TestConfig {
     tag 'Test Config'
@@ -30,10 +31,13 @@ workflow {
     ch_input = DATA_PREPARATION(Channel.fromPath(params.input_dir, checkIfExists: true))
 
     // Run Nextclade
-    NEXTCLADE_RUN(DATA_PREPARATION.out.fasta_files, Channel.fromPath(params.nextclade_datasets))
+    NEXTCLADE_RUN(DATA_PREPARATION.out.fasta_files, Channel.fromPath(params.nextclade_datasets, checkIfExists: true))
 
     // Clean TSV Files from Nextclade
     CLEAN_TSV_FILES(NEXTCLADE_RUN.out.nextclade_outputs)
+
+    //Run Mutation Analysis
+    MUTATION_ANALYSIS(CLEAN_TSV_FILES.out.cleaned_tsv_files, Channel.fromPath(params.mutations_csv, checkIfExists: true))
 
     // Test configuration
     TestConfig()
