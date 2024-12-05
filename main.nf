@@ -1,10 +1,11 @@
 #!/usr/bin/env nextflow
 nextflow.enable.dsl=2
 
-include { DATA_PREPARATION } from './data_preparation.nf'
-include { NEXTCLADE_RUN } from './nextclade_run.nf'
-include { CLEAN_TSV_FILES } from './clean_tsv_files.nf'
-include {MUTATION_ANALYSIS} from './mutation_analysis.nf'
+include { DATA_PREPARATION } from './modules/data_preparation.nf'
+include { NEXTCLADE_RUN } from './modules/nextclade_run.nf'
+include { CLEAN_TSV_FILES } from './modules/clean_tsv_files.nf'
+include { MUTATION_ANALYSIS } from './modules/mutation_analysis.nf'
+include { DATA_COMPILATION } from './modules/data_compilation.nf'
 
 process TestConfig {
     tag 'Test Config'
@@ -38,6 +39,9 @@ workflow {
 
     //Run Mutation Analysis
     MUTATION_ANALYSIS(CLEAN_TSV_FILES.out.cleaned_tsv_files, Channel.fromPath(params.mutations_csv, checkIfExists: true))
+
+    // Combine Results
+    DATA_COMPILATION(MUTATION_ANALYSIS.out.mutation_results)
 
     // Test configuration
     TestConfig()
