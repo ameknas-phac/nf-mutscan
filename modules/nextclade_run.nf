@@ -10,7 +10,6 @@ process NEXTCLADE_RUN {
 
     input:
     path fasta_files
-    path ch_nextclade_datasets
 
     output:
     path ('nextclade_outputs'), emit: nextclade_outputs
@@ -21,7 +20,7 @@ process NEXTCLADE_RUN {
     """
     mkdir -p nextclade_outputs
 
-    for dataset in ${ch_nextclade_datasets}/*; do
+    for dataset in ${params.nextclade_datasets}/*; do
         dataset_name=\$(basename \${dataset})
         echo "Running Nextclade on dataset: \${dataset_name}"
         nextclade run \

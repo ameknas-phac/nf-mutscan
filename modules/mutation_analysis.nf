@@ -25,7 +25,7 @@ process MUTATION_ANALYSIS {
     run_mutation_analysis.py \\
         -t ${cleaned_tsv_files} \\
         -m ${mutations_dir} \\
-        -d ${params.nextclade_datasets_test}\\
+        -d ${params.nextclade_datasets}\\
         -s ${params.mutation_script} \\
         -o mutation_results
     """

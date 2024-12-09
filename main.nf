@@ -32,7 +32,7 @@ workflow {
     ch_input = DATA_PREPARATION(Channel.fromPath(params.input_dir, checkIfExists: true))
 
     // Run Nextclade
-    NEXTCLADE_RUN(DATA_PREPARATION.out.fasta_files, Channel.fromPath(params.nextclade_datasets, checkIfExists: true))
+    NEXTCLADE_RUN(DATA_PREPARATION.out.fasta_files)
 
     // Clean TSV Files from Nextclade
     CLEAN_TSV_FILES(NEXTCLADE_RUN.out.nextclade_outputs)
