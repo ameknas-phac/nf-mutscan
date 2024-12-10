@@ -1,12 +1,12 @@
 
-# MutScan
+# IRVC/nf-mutscan
 
 [![Nextflow](https://img.shields.io/badge/Nextflow->=22.10.1-brightgreen.svg?style=flat&logo=nextflow)](https://www.nextflow.io/)
 [![Docker Profile](https://img.shields.io/badge/Profile-Docker-blue.svg?logo=docker)](#)
 [![Singularity Profile](https://img.shields.io/badge/Profile-Singularity-blueviolet.svg?logo=singularity)](#)
 [![Conda Profile](https://img.shields.io/badge/Profile-Conda-green.svg?logo=conda)](#)
 
-**MutScan** is a **Nextflow** pipeline designed for scalable, reproducible, and streamlined mutation scanning in genomic data. It integrates **Nextclade** for variant analysis and a Python-based analysis workflow for identifying and summarizing curated mutations. The pipeline accommodates various runtime environments—including Docker, Singularity, and Conda—ensuring portability across diverse computational settings.
+**nf-mutscan** is a **Nextflow** pipeline designed for scalable, reproducible, and streamlined mutation scanning in genomic data. It integrates **Nextclade** for variant analysis and a Python-based analysis workflow for identifying and summarizing curated mutations. The pipeline accommodates various runtime environments—including Docker, Singularity, and Conda—ensuring portability across diverse computational settings.
 
 ## Key Features
 
@@ -23,7 +23,7 @@
 
 ## Pipeline Overview
 
-The MutScan pipeline comprises several steps:
+The nf-mutscan pipeline comprises several steps:
 
 1. **Data Preparation**:  
    - Validates and organizes input FASTA files.
