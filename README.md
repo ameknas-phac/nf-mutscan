@@ -103,7 +103,7 @@ After pipeline completion, the `--output_dir` will contain:
 
 ## Pipeline Workflow
 
-[nf-mutscan workflow](images/nf-mutscan-workflow.png)
+![nf-mutscan workflow](images/nf-mutscan-workflow.png)
 
 ## Customization
 
