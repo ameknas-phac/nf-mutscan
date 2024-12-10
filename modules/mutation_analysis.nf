@@ -22,6 +22,8 @@ process MUTATION_ANALYSIS {
     """
     mkdir -p mutation_results
 
+    validate_mutation_files.py ${mutations_dir} || exit 1
+
     run_mutation_analysis.py \\
         -t ${cleaned_tsv_files} \\
         -m ${mutations_dir} \\

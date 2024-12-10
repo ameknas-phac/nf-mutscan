@@ -19,6 +19,8 @@ process DATA_PREPARATION {
     script:
     """
     mkdir -p Mutation_Scan
-    data_preparation.py -i ${input_dir} -o Mutation_Scan
+    
+    data_preparation.py -i ${input_dir} -o Mutation_Scan > data_preparation.log 2>&1 || \
+        { echo "ERROR: Data preparation failed. Check data_preparation.log for details."; exit 1; }
     """
 }
